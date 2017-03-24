@@ -20,6 +20,8 @@ public class ExemploCondicionaisSimples {
         }else{
             System.out.printf("O numero %d é o Maior \n ",n3);
         }
-        
     }
 }
+
+        
+
