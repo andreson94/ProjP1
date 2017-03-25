@@ -8,7 +8,7 @@ public class Exercicio5 {
         Scanner leitor = new Scanner (System.in);
         int l;
         double a;
-        System.out.print("Digite o valor de L: ");
+        System.out.print("Digite o Lado: ");
         l = leitor.nextInt();
         a = Math.pow(l, 2);
         System.out.println("Área do Quadrado: " + a + "m²");
