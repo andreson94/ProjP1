@@ -1,8 +1,8 @@
-package pi.i;
+package ADOI;
 
 import java.util.Scanner;
 
-public class carro {
+public class ConsumoCarro {
     public static void main(String[] args) {
         float cm, km, l;
 

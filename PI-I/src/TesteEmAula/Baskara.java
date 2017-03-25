@@ -1,4 +1,4 @@
-package pi.i;
+package TesteEmAula;
 
 import java.util.Scanner;
 

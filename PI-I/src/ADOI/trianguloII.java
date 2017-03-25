@@ -1,4 +1,4 @@
-package pi.i;
+package ADOI;
 
 import java.util.Scanner;
 

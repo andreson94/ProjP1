@@ -1,4 +1,4 @@
-package ADO1;
+package TesteEmAula;
 
 import java.util.Scanner;
 
