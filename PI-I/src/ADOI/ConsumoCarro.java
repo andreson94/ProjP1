@@ -14,7 +14,8 @@ public class ConsumoCarro {
 
       System.out.print("Litros de gasolina: ");
 
-       l = leitor.nextFloat();        cm = km/l;
+       l = leitor.nextFloat();        
+       cm = km/l;
 
       System.out.println("Consumo Médio: " + cm + " km/l");
 
