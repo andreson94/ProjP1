@@ -15,6 +15,7 @@ public class SalarioPorHora {
             System.out.println("Demostrativo de Pagamento");
             System.out.print("Nome: ");
             nome = leitor.nextLine();
+            System.out.println("");
             
         
     }
