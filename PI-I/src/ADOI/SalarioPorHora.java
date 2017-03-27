@@ -11,12 +11,15 @@ public class SalarioPorHora {
         por R$ Valor da Hora e deve receber R$ Valor do Salário“.*/
         Scanner leitor = new Scanner(System.in);
         String nome;
-        float htab, qh, s;
+        double valorhora, salario,qhora;
             System.out.println("Demostrativo de Pagamento");
             System.out.print("Nome: ");
             nome = leitor.nextLine();
-            System.out.println("");
-            
-        
+            System.out.print("Horas Trabalhadas: ");
+            qhora = leitor.nextDouble();
+            System.out.print("Valor da Hora: ");
+            valorhora = leitor.nextDouble();
+            salario = (double) qhora * valorhora;
+            System.out.printf("O Funcionário %s trabalhou %.0f horas por R$ %.2f e deve receber R$ %.2f\n ",nome,qhora,valorhora,salario);
     }
 }
