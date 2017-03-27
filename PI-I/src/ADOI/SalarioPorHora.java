@@ -22,4 +22,5 @@ public class SalarioPorHora {
             salario = (double) qhora * valorhora;
             System.out.printf("O Funcionário %s trabalhou %.0f horas por R$ %.2f e deve receber R$ %.2f\n ",nome,qhora,valorhora,salario);
     }
+    
 }
