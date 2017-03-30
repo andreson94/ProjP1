@@ -13,8 +13,17 @@ e) a área do retângulo que tem lados A e B.
 f) o perímetro do retângulo que tem lados A e B.
 */
         Scanner leitor = new Scanner(System.in);
-        int na, nb, nc;
+        int la, lb, lc;
         double areatr, areac, areat, areaq ,arrear, perimetror;
-    
+   
+            System.out.print("Informe o lado a: ");
+            la = Integer.parseInt(leitor.nextLine());
+            System.out.print("Informe o lado b: ");
+            lb = Integer.parseInt(leitor.nextLine());
+            System.out.println("Informe o lado c:");
+            lc = Integer.parseInt(leitor.nextLine());
+            areatr = (la * lc)/2;
+            System.out.println("Area do triangulo Retangulo é: " + areatr );
+
     }
 }
