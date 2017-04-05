@@ -17,47 +17,49 @@ public class calculadora {
             
         switch (opcao){
             case 1:
-                System.out.println("\n\t\tADIÇÃO");
-                System.out.print("Digite o Primeiro numero:");
+                System.out.println("\n\t\tADIÇÃO\n");
+                System.out.print("Digite o 1ºnumero: ");
                 n1 = Integer.parseInt(leitor.nextLine());
-                System.out.print("Digite o Segundo numero: ");
+                System.out.print("Digite o 2ºnumero: ");
                 n2 = Integer.parseInt(leitor.nextLine());
                 r = n1 + n2;
-                System.out.println("Resultado: " + r);
+                System.out.printf("\n\t\t%d + %d = %d\n",n1,n2,r);
+
                 break;
             case 2:
-                System.out.println("\n\t\tSUBTRAÇÃO");
-                System.out.print("Digite o Primeiro numero:");
+                System.out.println("\n\t\tSUBTRAÇÃO\n");
+                System.out.print("Digite o 1ºnumero: ");
                 n1 = Integer.parseInt(leitor.nextLine());
-                System.out.print("Digite o Segundo numero: ");
+                System.out.print("Digite o 2ºnumero: ");
                 n2 = Integer.parseInt(leitor.nextLine());
                 r = n1 - n2;
-                System.out.println("Resultado: " + r);
+                System.out.printf("\n\t\t%d - %d = %d\n",n1,n2,r);
                 break;
             case 3:
-                System.out.println("\n\t\tDIVISÃO");
-                System.out.print("Digite o Primeiro numero:");
+                System.out.println("\n\t\tDIVISÃO\n");
+                System.out.print("Digite o 1ºnumero: ");
                 n1 = Integer.parseInt(leitor.nextLine());
-                System.out.print("Digite o Segundo numero: ");
+                System.out.print("Digite o 2ºnumero: ");
                 n2 = Integer.parseInt(leitor.nextLine());
                 r = n1 / n2;
-                System.out.println("Resultado: " + r);
+                System.out.printf("\n\t\t%d / %d = %d\n",n1,n2,r);
                 break;
             case 4:
                 System.out.println("\n\t\tMULTIPLICAÇÃO");
-                System.out.print("Digite o Primeiro numero:");
+                System.out.print("Digite o 1ºnumero: ");
                 n1 = Integer.parseInt(leitor.nextLine());
-                System.out.print("Digite o Segundo numero: ");
+                System.out.print("Digite o 2ºnumero: ");
                 n2 = Integer.parseInt(leitor.nextLine());
                 r = n1 * n2;
-                System.out.println("Resultado: " + r);
+                System.out.printf("\n\t\t%d * %d = %d\n",n1,n2,r);
                 break;
                 default:
                     System.out.println("Opçao Invalida");
                     break;
                     
-            
-            }
+         
+                
+        }
     }
         
 }
