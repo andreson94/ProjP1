@@ -1,14 +1,15 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package ADOII;
 
-/**
- *
- * @author Andreson
- */
+import java.util.Scanner;
+
+/*Criar um programa para calcular o valor da multa a ser paga de anuidade de uma associação.
+A anuidade deve ser paga no mês de janeiro. Por mês, é cobrado 5% de juros 
+(com juros sobre juros). Por exemplo, uma associação de R$100 paga em janeiro, custa R$ 100;
+em fevereiro, custa R$105; em março, custa R$110,25; e, em dezembro, R$171,03*/
 public class exe8 {
+    public static void main(String[] args) {
     
+        Scanner leitor = new Scanner(System.in);
+        
+    }
 }
