@@ -1,4 +1,4 @@
-package execicios;
+package ExerciciosTeste;
 
 import java.util.Scanner;
 import jdk.nashorn.internal.parser.TokenType;
