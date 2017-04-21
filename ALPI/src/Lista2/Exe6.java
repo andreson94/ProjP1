@@ -8,7 +8,7 @@ public class Exe6 {
 como nome, idade e sexo. O programa deve imprimir os dados do aluno mais velho. Use o laço DO-WHILE*/
         Scanner leitor = new Scanner(System.in);
         String nome,sexo;
-        int idade,velho,i = 0;
+        int idade,velho=0,i = 0;
         do {
             System.out.print("nome: ");
             nome = leitor.next();
@@ -16,14 +16,15 @@ como nome, idade e sexo. O programa deve imprimir os dados do aluno mais velho. 
             idade = leitor.nextInt();
             System.out.print("sexo: ");
             sexo = leitor.next();
-            velho = idade;
+            
             i= i+1;
-        }while(i<5);
         if (idade > velho ){
             velho = idade;
         }else{
             velho = velho;
         }
-        System.out.println(velho);
+        }while(i<5);
+        
+        System.out.println(velho + nome + sexo);
     }
 }
