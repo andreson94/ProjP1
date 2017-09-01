@@ -42,6 +42,7 @@ public class EXE1 {
     }
         return v;
     }
+
 //adicionar nomes ao vetor criado
     static void adicionarNomes(String[] v,int opcao){
        String nome;
@@ -75,7 +76,8 @@ public class EXE1 {
         break;
         }
     }
-    //buscar nome no vetor e informar posiÃ§Ã£o
+
+//mostrar lista de nomes
     static void mostrarNomes(String[] v,int opcao){
         switch(opcao){
             
@@ -85,12 +87,16 @@ public class EXE1 {
             
             if (v[i].equals(v[i]=" ")){
                 System.out.println("Lista fazia");
+            
             }else{
                 System.out.println(v[i]+"\n");
             }
         }
+        break;
         }
     }
+
+//buscar nome no vetor e informar posição
     static void buscarNomes(String[] v,int opcao){
         String nome;
         
@@ -113,7 +119,9 @@ public class EXE1 {
         break;
         }
     }
-   static void excluirNome(String[]v,int opcao){
+
+//excluir nome nome no vetor
+    static void excluirNome(String[]v,int opcao){
        String excluido=null,nome;
        
        switch(opcao){
