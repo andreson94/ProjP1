@@ -16,6 +16,8 @@ public class EXE1 {
         add = adicionarNomes(v,0, nome);
         buscar = buscarNomes(v,0, nome);
         System.out.println(add);
+        excluirNome(v, 0, nome);
+        System.out.println(nome+" "+buscar);
     }
     
     static Scanner console = new Scanner(System.in);
@@ -49,7 +51,7 @@ public class EXE1 {
             
             boolean naohExiste = false;
             
-            if (v[i].equalsIgnoreCase(null)){
+            if (v[i].equals(null)){
                 
                 if(v[i].equalsIgnoreCase(nome)){
                     System.err.println("Nome já Existente");
@@ -75,7 +77,7 @@ public class EXE1 {
             case 3:
         for(int i=0;i<v.length;i++){
             
-            if(nome.equalsIgnoreCase(v[i])){
+            if(nome.equals(v[i])){
                 System.out.printf("Nome encontrado na posição %d",i);
     return true;
             }else{
@@ -84,10 +86,24 @@ public class EXE1 {
         }
         break;
         }
-            return true;
+            return false;
     }
    static void excluirNome(String[]v,int opcao,String nome){
+       String excluido=null;
        
+       switch(opcao){
+           case 4:
+               for(int i=0;i<v.length;i++){
+                   
+                   if(nome.equals(v[i])){
+                       excluido=v[i];
+                       v[i]=v[i]+1;
+                       System.out.println(v[i]);
+                   }else{
+                       System.out.println("nome não está na Lista");
+                   }
+               }
+       }
    }
     
 }
