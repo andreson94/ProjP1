@@ -9,58 +9,44 @@ import java.util.Scanner;
 public class EXE1 {
     public static void main(String[] args) {
         String nome;
-        
+        boolean add,buscar;
         menu();
-        escolherOpcoes();
         String[]v =vetorNomes();
         nome = console.nextLine();
-        adicionarNomes(v, nome);
-        buscarNomes(v, nome);
+        add = adicionarNomes(v,0, nome);
+        buscar = buscarNomes(v,0, nome);
+        System.out.println(add);
     }
     
     static Scanner console = new Scanner(System.in);
-    //apresentar um menu
-    static void menu(){
+    
+//apresentar um menu e escolher a opção
+    static int menu(){
         System.out.print("\tMENU\n"+"1 - Adicionar um novo nome\n" +
 "2 - Apresentar os nomes\n" +
 "3 - Pesquisar um nome\n" +
 "4 - Remover um nome\n" +
 "0 - Sair\n");
-    }
-    //testar o menu
-    static int escolherOpcoes(){
+        System.out.print("Digite o numero da opção desejada: ");
         int opcao = console.nextInt();
-        switch(opcao){
-            case 1:
-                System.out.println("Adicionar um novo Nome");
-                break;
-            case 2:
-                System.out.println("Apresentar os Nomes");
-                break;
-            case 3:
-                System.out.println("Pesquisar um Nome");
-                break;
-            case 4:
-                System.out.println("Remover um Nome");
-                break;
-            case 0:
-                System.out.println("sair");
-            
-        }
         return opcao;
-        
+
     }
-    //criar o vetor a ser utilizado na lista
+    
+//criar o vetor a ser utilizado na lista
     static String[] vetorNomes(){
         String v [] = new String[10];
         return v;
     }
-    //adicionar nomes ao vetor criado
-    static boolean adicionarNomes(String[] v,String nome){
+//adicionar nomes ao vetor criado
+    static boolean adicionarNomes(String[] v,int opcao,String nome){
        
-       // if(opcao == 1){
-            
+        switch(opcao){
+        
+            case 1: 
+                
         for(int i=0;i<v.length;i++){
+            
             boolean naohExiste = false;
             
             if (v[i].equalsIgnoreCase(null)){
@@ -72,19 +58,21 @@ public class EXE1 {
 
                     }else if(naohExiste)
                         v[i] = nome;
-                    return true;
+        return true;
             
             }else{
                 System.err.println("Lista cheia impossivel adicionar nomes");           
                   return true;  
             }
         }
-       // }
+        break;
+        }
         return false;
     }
     //buscar nome no vetor e informar posição
-    static boolean buscarNomes(String[] v,String nome){
-        
+    static boolean buscarNomes(String[] v,int opcao,String nome){
+        switch(opcao){
+            case 3:
         for(int i=0;i<v.length;i++){
             
             if(nome.equalsIgnoreCase(v[i])){
@@ -94,8 +82,12 @@ public class EXE1 {
                 System.out.println("Nome não encontrado");
             }
         }
-            return false;
+        break;
+        }
+            return true;
     }
-   
+   static void excluirNome(String[]v,int opcao,String nome){
+       
+   }
     
 }
