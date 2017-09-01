@@ -8,29 +8,28 @@ import java.util.Scanner;
  */
 public class EXE1 {
     public static void main(String[] args) {
-        String nome;
-        boolean add,buscar;
-        menu();
+        int opcao;
+        
+        opcao = menu();
         String[]v =vetorNomes();
-        nome = console.nextLine();
-        add = adicionarNomes(v,0, nome);
-        buscar = buscarNomes(v,0, nome);
-        System.out.println(add);
-        excluirNome(v, 0, nome);
-        System.out.println(nome+" "+buscar);
+        adicionarNomes(v, opcao);       
+        buscarNomes(v,opcao);
+        excluirNome(v, opcao);
     }
     
     static Scanner console = new Scanner(System.in);
     
-//apresentar um menu e escolher a opção
+//apresentar um menu e escolher a opÃ§Ã£o
     static int menu(){
-        System.out.print("\tMENU\n"+"1 - Adicionar um novo nome\n" +
+       int opcao;
+
+       System.out.print("\tMENU\n"+"1 - Adicionar um novo nome\n" +
 "2 - Apresentar os nomes\n" +
 "3 - Pesquisar um nome\n" +
 "4 - Remover um nome\n" +
 "0 - Sair\n");
         System.out.print("Digite o numero da opção desejada: ");
-        int opcao = console.nextInt();
+        opcao = console.nextInt();
         return opcao;
 
     }
@@ -38,10 +37,16 @@ public class EXE1 {
 //criar o vetor a ser utilizado na lista
     static String[] vetorNomes(){
         String v [] = new String[10];
+        for(int i=0;i<v.length;i++){
+        v[i]=" ";
+    }
         return v;
     }
 //adicionar nomes ao vetor criado
-    static boolean adicionarNomes(String[] v,int opcao,String nome){
+    static void adicionarNomes(String[] v,int opcao){
+       String nome;
+       boolean naohExiste = false;
+
        
         switch(opcao){
         
@@ -49,58 +54,80 @@ public class EXE1 {
                 
         for(int i=0;i<v.length;i++){
             
-            boolean naohExiste = false;
             
-            if (v[i].equals(null)){
+            if (v[i].equalsIgnoreCase(" ")){
+                
+                System.out.print("Digite um nome:");
+                nome=console.nextLine();
                 
                 if(v[i].equalsIgnoreCase(nome)){
                     System.err.println("Nome já Existente");
             
-                    return naohExiste = true;
+                     naohExiste = true;
 
                     }else if(naohExiste)
                         v[i] = nome;
-        return true;
             
             }else{
                 System.err.println("Lista cheia impossivel adicionar nomes");           
-                  return true;  
             }
         }
         break;
         }
-        return false;
     }
-    //buscar nome no vetor e informar posição
-    static boolean buscarNomes(String[] v,int opcao,String nome){
+    //buscar nome no vetor e informar posiÃ§Ã£o
+    static void mostrarNomes(String[] v,int opcao){
+        switch(opcao){
+            
+            case 2:
+                
+        for(int i=0;i<v.length;i++){
+            
+            if (v[i].equals(v[i]=" ")){
+                System.out.println("Lista fazia");
+            }else{
+                System.out.println(v[i]+"\n");
+            }
+        }
+        }
+    }
+    static void buscarNomes(String[] v,int opcao){
+        String nome;
+        
         switch(opcao){
             case 3:
+          
+                nome=console.nextLine();
+    
         for(int i=0;i<v.length;i++){
             
             if(nome.equals(v[i])){
                 System.out.printf("Nome encontrado na posição %d",i);
-    return true;
+            break;
+            
             }else{
                 System.out.println("Nome não encontrado");
+                break;
             }
         }
         break;
         }
-            return false;
     }
-   static void excluirNome(String[]v,int opcao,String nome){
-       String excluido=null;
+   static void excluirNome(String[]v,int opcao){
+       String excluido=null,nome;
        
        switch(opcao){
            case 4:
                for(int i=0;i<v.length;i++){
+                   
+                   nome=console.nextLine();
                    
                    if(nome.equals(v[i])){
                        excluido=v[i];
                        v[i]=v[i]+1;
                        System.out.println(v[i]);
                    }else{
-                       System.out.println("nome não está na Lista ");
+                       System.out.println("nome nÃo estÃ¡ na Lista ");
                    }
                }
        }
