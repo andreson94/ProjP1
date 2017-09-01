@@ -100,7 +100,7 @@ public class EXE1 {
                        v[i]=v[i]+1;
                        System.out.println(v[i]);
                    }else{
-                       System.out.println("nome não está na Lista");
+                       System.out.println("nome não está na Lista ");
                    }
                }
        }
