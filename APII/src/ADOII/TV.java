@@ -46,24 +46,26 @@ public class TV {
     /**
      * @return the ligada
      */
-    public boolean isLigada() {
-        return ligada;
+    public void ligar() {
+        ligada = true;
     }
 
     /**
      * @param ligada the ligada to set
      */
-    public void setLigada(boolean ligada) {
-        this.ligada = ligada;
+    public void desligar() {
+        ligada = false;
     }
     
     /**
      * 
      */
-    public void imorimirEstado(){
+    public void status(){
         if (ligada){
-            System.out.println("TV Desligada");
-        }
             System.out.println("TV Ligada");
+        }else{
+            System.out.println("TV Desligada");
+    }
+      
     }
 }
