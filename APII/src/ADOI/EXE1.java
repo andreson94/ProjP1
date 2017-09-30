@@ -22,14 +22,25 @@ public class EXE1 {
 //apresentar um menu e escolher a opÃ§Ã£o
     static int menu(){
        int opcao;
-
+       boolean sair = false;
+      
+       do{
+        
        System.out.print("\tMENU\n"+"1 - Adicionar um novo nome\n" +
-"2 - Apresentar os nomes\n" +
-"3 - Pesquisar um nome\n" +
-"4 - Remover um nome\n" +
-"0 - Sair\n");
-        System.out.print("Digite o numero da opção desejada: ");
+        "2 - Apresentar os nomes\n" +
+        "3 - Pesquisar um nome\n" +
+        "4 - Remover um nome\n" +
+        "0 - Sair\n");
+        
+       System.out.print("Digite o numero da opção desejada: ");
         opcao = console.nextInt();
+        
+       if (opcao==0){
+           sair=true;
+           break;
+        }
+       }while(sair);
+       
         return opcao;
 
     }
@@ -38,7 +49,7 @@ public class EXE1 {
     static String[] vetorNomes(){
         String v [] = new String[10];
         for(int i=0;i<v.length;i++){
-        v[i]=" ";
+        v[i]=null;
     }
         return v;
     }
@@ -59,7 +70,7 @@ public class EXE1 {
             if (v[i].equalsIgnoreCase(" ")){
                 
                 System.out.print("Digite um nome:");
-                nome=console.nextLine();
+                nome=console.next();
                 
                 if(v[i].equalsIgnoreCase(nome)){
                     System.err.println("Nome já Existente");
@@ -85,7 +96,7 @@ public class EXE1 {
                 
         for(int i=0;i<v.length;i++){
             
-            if (v[i].equals(v[i]=" ")){
+            if (v[i].equals(null)){
                 System.out.println("Lista fazia");
             
             }else{
@@ -103,7 +114,7 @@ public class EXE1 {
         switch(opcao){
             case 3:
           
-                nome=console.nextLine();
+                nome=console.next();
     
         for(int i=0;i<v.length;i++){
             
@@ -128,7 +139,7 @@ public class EXE1 {
            case 4:
                for(int i=0;i<v.length;i++){
                    
-                   nome=console.nextLine();
+                   nome=console.next();
                    
                    if(nome.equals(v[i])){
                        excluido=v[i];
