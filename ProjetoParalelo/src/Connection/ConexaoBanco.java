@@ -7,12 +7,12 @@ package Connection;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -26,58 +26,26 @@ public class ConexaoBanco {
     private final String senha = ""; //responsavel por identificar a senha 
     public Statement stat; // responsavel por preparar e realisar pesquisas no banco.
     public ResultSet result; //responsavel por armazenar o resultado de uma pesquisa passado para o statement.
-    public Connection conexao; //responsavel por realizar a conexao com o banco de dados.
-    public Connection getconnection(){
-      
+    public Connection connection; //responsavel por realizar a conexao com o banco de dados.
+    
+    //metodo responsavel pela conexão do banco
+    public void conexao(){
+        try { //tentativa inicial
+            System.setProperty("jdbc.Drivers",driver);//seta a prpriedade do driver de conexão
+            connection = DriverManager.getConnection(caminho, usuario, senha);//realiza a conexao com o banco
+            JOptionPane.showMessageDialog(null,"Conectado com sucesso");//imprime uma caixa de mensagem
+        } catch (SQLException ex) { //excessão
+            JOptionPane.showMessageDialog(null,"Erro de Conexão!\nErro: "+ex.getMessage());//mostra mensagem de erro pegando oque esta no ex
+        }
+        
+    }
+    public void desconecta(){//método para fechar a conexão com o banco
         try {
-            Class.forName(Driver);
+            connection.close(); //fecha a conexão
+            JOptionPane.showMessageDialog(null,"Conectado com sucesso");//imprime uma caixa de mensagem
+        } catch (SQLException ex) {
+            JOptionPane.showMessageDialog(null,"Erro ao fechar a Conexão!\nErro: "+ex.getMessage());//mostra mensagem de erro que esta no ex
 
-            return DriverManager.getConnection(URL, USER, PASS);
-                    
-        } catch (ClassNotFoundException | SQLException ex) {
-            throw new RuntimeException("Erro na Conexão: ",ex);
         }
     }
-    
-    public static void closeConnetion(Connection con){
-            
-        try {
-               if(con!= null){
-                con.close();
-                }
-               
-            } catch (SQLException ex) {
-                Logger.getLogger(ConexaoBanco.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        } 
-    public static void closeConnetion(Connection con, PreparedStatement stmt){
-            
-        closeConnetion(con);
-        
-        try {
-               if(stmt!= null){
-                stmt.close();
-                }
-               
-            } catch (SQLException ex) {
-                Logger.getLogger(ConexaoBanco.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        } 
-    public static void closeConnetion(Connection con, PreparedStatement stmt,ResultSet result){
-            
-        closeConnetion(con, stmt);
-        
-        try {
-               if(result!= null){
-                result.close();
-                }
-               
-            } catch (SQLException ex) {
-                Logger.getLogger(ConexaoBanco.class.getName()).log(Level.SEVERE, null, ex);
-            }
-            
-        } 
-    }
-    
+}
